@@ -15,7 +15,7 @@ class BookClubsController < ApplicationController
 
   # POST /book_clubs
   def create
-    @book_club = BookClub.new(book_club_params)
+    @book_club = current_user.book_clubs.build(book_club_params)
 
     if @book_club.save
       render json: @book_club, status: :created, location: @book_club
@@ -46,6 +46,6 @@ class BookClubsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def book_club_params
-      params.require(:book_club.permit(:name, :category, :description, :meeting_time)
+      params.require(:book_club).permit(:name, :category, :description, :meeting_time, :current_book_id)
     end
 end
