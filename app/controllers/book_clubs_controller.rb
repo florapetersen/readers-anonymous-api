@@ -5,17 +5,21 @@ class BookClubsController < ApplicationController
   def index
     @book_clubs = BookClub.all
 
-    render json: @book_clubs
+    render json: BookClubSerializer.new(@book_clubs).serializable_hash[:data].map{ |hash| hash[:attributes] }
   end
 
   # GET /book_clubs/1
   def show
-    render json: @book_club
+    hash = BookClubSerializer.new(@book_club).serializable_hash
+    render json: { 
+      bookClub: hash[:data][:attributes]
+     }
   end
 
   # POST /book_clubs
   def create
     @book_club = current_user.book_clubs.build(book_club_params)
+    @book_club.meeting_time = Time.now
 
     if @book_club.save
       render json: @book_club, status: :created, location: @book_club
