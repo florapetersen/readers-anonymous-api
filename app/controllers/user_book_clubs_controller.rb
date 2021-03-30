@@ -46,6 +46,6 @@ class UserBookClubsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def book_club_book_params
-      params.require(:user_book_club).permit()
+      params.require(:user_book_club).permit(:user_id, :book_club_id)
     end
 end
