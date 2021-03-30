@@ -11,9 +11,7 @@ class BookClubsController < ApplicationController
   # GET /book_clubs/1
   def show
     hash = BookClubSerializer.new(@book_club).serializable_hash
-    render json: { 
-      bookClub: hash[:data][:attributes]
-     }
+    render json: hash[:data][:attributes]
   end
 
   # POST /book_clubs

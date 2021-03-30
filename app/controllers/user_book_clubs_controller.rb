@@ -5,7 +5,7 @@ class UserBookClubsController < ApplicationController
   def index
     @user_book_clubs = UserBookClub.all
 
-    render json: @user_book_clubs
+    render json: UserBookClubSerializer.new(@user_book_clubs).serializable_hash[:data].map{ |hash| hash[:attributes] }
   end
 
   # GET /user_book_clubs/1
