@@ -16,6 +16,8 @@ class UserBookClubsController < ApplicationController
   # POST /user_book_clubs
   def create
     @user_book_club = current_user.user_book_clubs.build(user_book_club_params)
+    @user_id = current_user.id
+    @book_club_id = book_club.id
 
     if @user_book_club.save
       render json: @user_book_club, status: :created, location: @user_book_club
