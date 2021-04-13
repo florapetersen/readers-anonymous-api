@@ -16,7 +16,6 @@ class UserBookClubsController < ApplicationController
   # POST /user_book_clubs
   def create
     @user_book_club = current_user.user_book_clubs.build(user_book_club_params)
-    @user_id = current_user.id
     @book_club_id = book_club.id
 
     if @user_book_club.save
@@ -47,7 +46,7 @@ class UserBookClubsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def book_club_book_params
+    def user_book_club_params
       params.require(:user_book_club).permit(:user_id, :book_club_id)
     end
 end
