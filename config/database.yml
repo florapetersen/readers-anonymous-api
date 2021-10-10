@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  #database: db/production.sqlite3
   database: readers-anonymous-api_production
   username: readers-anonymous-api
   password: <%= ENV['READERS-ANONYMOUS-API_DATABASE_PASSWORD'] %>
