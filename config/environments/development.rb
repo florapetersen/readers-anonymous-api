@@ -55,7 +55,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   Rails.application.routes.default_url_options = { 
-    #host: 'https://warm-depths-26802.herokuapp.com/'
-    host: 'https://localhost:3001'
+    host: 'https://warm-depths-26802.herokuapp.com/'
+    #host: 'https://localhost:3001'
    }
 end
