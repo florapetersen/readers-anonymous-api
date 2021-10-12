@@ -1,5 +1,5 @@
 class BookClubSerializer
   include JSONAPI::Serializer
-  attributes :id, :name, :category, :description, :meeting_time, :current_book_id
+  attributes :id, :name, :category, :description, :current_book_id
   
 end
