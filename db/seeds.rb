@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+BookClub.create(name: "Judy Blume Lovers", category: "coming of age", description: "We read all Judy Blume and other young adult coming of age novels!")
