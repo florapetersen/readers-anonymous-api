@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "book_clubs#index"
+  root 'welcome#index'
   resources :user_book_clubs
   resources :book_club_books
   resources :books
